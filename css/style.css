@@ -1,15 +1,51 @@
+
+/* Generales */
 body {
-    background-color: #000;
+    background-image:url(../img/fondo.JPG);
     color: #fff;
-font-family: 'Urbanist', sans-serif;
+  font-family: 'Urbanist', sans-serif;
+  margin: 0;
+    padding: 0;
+
+  }
+  h4 {
+    margin-top: 0;
   }
   
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  
+  }
+  .logo {
+    padding: 10px;
+}
+  .logo img {
+    border-radius: 100px;
+    display: block;
+    margin: auto;
+    width: 250px;
+}
+
+  /* cabezera */
+
   header {
     background-color: #333;
     padding: 10px;
     margin: 20px;
   }
-  
+  /* Navegador */
+
   nav ul {
     list-style-type: none;
     margin: 0;
@@ -26,7 +62,8 @@ font-family: 'Urbanist', sans-serif;
     text-decoration: none;
     font-size: 20px;
   }
-  
+  /* Buscador*/
+
   .main-content {
     display: flex;
     justify-content: center;
@@ -60,8 +97,6 @@ font-family: 'Urbanist', sans-serif;
     cursor: pointer;
     border: none;
     cursor: pointer;
-    font-family: 'Delicious Handrawn', cursive;
-font-family: 'Noto Sans Zanabazar Square', sans-serif;
   }
 
    .search-button i {
@@ -69,13 +104,8 @@ font-family: 'Noto Sans Zanabazar Square', sans-serif;
     margin: 8px;
   }
   
- 
-  
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  
+    /*Footer*/
+
   footer {
     background-color: #333;
     color: #fff;
@@ -97,32 +127,7 @@ font-family: 'Noto Sans Zanabazar Square', sans-serif;
     margin-right: 0;
   }
   
-  h4 {
-    margin-top: 0;
-  }
-  
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-  }
-  
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  .logo img {
-    border-radius: 100px;
-    display: block;
-    margin: auto;
-    width: 200px;
-    
-}
+     /*Home page */
 
 .listado-principal {
 
@@ -151,11 +156,70 @@ font-size: 50px
 
 }
 
-.titulo-detalles h1 {
-
-color: red;
-font-size: 20px;
+    /*Destalle cansiones*/
 
 
-
+.cansiones{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin:0px;
 }
+.img{
+  padding: 9px;
+}
+.main-detalle-cansiones{
+  padding: 15px;
+  margin-left: 5%;
+}
+.ver-playlist, .agregar-play, .boton-agregar-playlist, .nombre-artista, .genero, .fecha, .album{
+  color: white;}
+  
+.nombre-artista, .genero, .fecha, .album{
+  font-size: 40px;
+}
+.ver-playlist{
+  font-size: 30px;
+}
+.boton-agregar-playlist{
+  padding: 12px;
+  background-color: black ;
+  color: white;
+  font-size: 18px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+
+    /*Destalle artista*/
+
+
+    .artista{
+      flex-direction: row;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: flex-start;
+      margin:0px;
+  }
+.top-albums{
+
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 7px;
+    margin: 30px;
+}
+
+
+      /*Detalle album*/
+
+.nombre-disco2 , .nombre-artista2 , .genero , .fechaPublicasion , .cansionesdisco{
+
+  color: white;
+  font-size: 40px;
+  letter-spacing: 7px;
+  margin: 30px;
+}
+
+

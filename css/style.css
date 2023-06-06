@@ -1,7 +1,9 @@
 
 /* Generales */
 body {
-    background-image:url(../img/espacio-con-estrellas-.jpeg);
+    background-image:url(../img/wallpaperflare.com_wallpaper.jpg);
+    
+
     color: #fff;
   font-family: 'Urbanist', sans-serif;
   margin: 0;
@@ -35,6 +37,13 @@ body {
     display: block;
     margin: auto;
     width: 250px;
+}
+
+h1{
+
+  font-size: 50px;
+
+
 }
 
   /* cabezera */
@@ -77,12 +86,13 @@ body {
     right: 20px;
     display: flex;
     align-items: center;
+    background-color: black;
   }
   
   #search-input {
     padding: 10px;
     font-size: 16px;
-    color: #000;
+    color: black;
     border: none;
     border-radius: 5px;
 
@@ -118,39 +128,39 @@ body {
     align-items: flex-start;
   }
   
-  .footer-column {
-    flex: 1;
-    margin-right: 30px;
-  }
-  
-  .footer-column:last-child {
-    margin-right: 0;
-  }
+
   
      /*Home page */
 
-.listado-principal {
+    
+.albumes {
 
-    width: 100%;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start
+    
 }
 
+.artistas{
+display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start}
+    
 
-.cansiones h1{
+.titulo-cansiones h1{
 
-font-size: 50px
+font-size: 50px;
+width:100%
 }
 
-.albumes h1 {
+.titulo-albums h1 {
 
-    font-size: 50px
-
+    font-size: 50px;
 }
 
-.artistas h1{
+.titulo-artistas h1{
 
     font-size: 50px
 

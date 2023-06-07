@@ -148,6 +148,11 @@ display: flex;
     justify-content: space-between;
     align-items: flex-start}
     
+    .cansiones{
+      display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start}
 
 .titulo-cansiones h1{
 
@@ -169,12 +174,10 @@ width:100%
     /*Destalle cansiones*/
 
 
-.cansiones{
+.cansion{
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin:0px;
+  margin: 10px
 }
 .img{
   padding: 9px;

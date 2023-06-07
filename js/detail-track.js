@@ -1,21 +1,30 @@
+window.addEventListener("load", function() {
+    let queryString = location.search;
+    let queryStringToObject = new URLSearchParams(queryString);
+    let id = queryStringToObject.get('id');
+  
+    let url = `https://api.allorigins.win/raw?url=https://api.deezer.com/track/${id}`;
 
-
-window.addEventListener("load", function(){
-
-let queryString = location.search 
-let queryStringToObject = new URLSearchParams(queryString); 
-let id = queryStringToObject.get('id');
-
-let url= `https://api.allorigins.win/raw?url=https://api.deezer.com/track/${id}`})
-
-fetch(url) 
-.then( function(response){ 
-        return response.json(); 
-})
-.then( function(data){ 
-    console.log(data);
-
-})
-.catch( function(error){
-    console.log(error);
-})
+    console.log(id);
+  
+    fetch(url)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        console.log(data);
+        let titulo= document.querySelector('.titulo-detail-ca'); 
+        titulo.innerText += `${data.title}`;     
+    
+        let img= document.querySelector(".img-detail-can");
+        img.innerHTML += `<img width="400px"  class="detalle"   src="${data.album.cover_big}" alt="Album Cover">`
+            
+        let artista = document.querySelector(".nombre-artista");
+        artista.innerHTML += `<a href="detail_artist.html?id=${data.artist.id}">${data.artist.name}</a>`    
+                        
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  });
+  

@@ -1,11 +1,11 @@
 window.addEventListener("load", function() {
     let queryString = location.search;
     let queryStringToObject = new URLSearchParams(queryString);
-    let id = queryStringToObject.get('id');
+    let dat = queryStringToObject.get('dat');
   
-    let url = `https://api.allorigins.win/raw?url=https://api.deezer.com/track/${id}`;
+    let url = `https://api.allorigins.win/raw?url=https://api.deezer.com/track/${dat}`;
 
-    console.log(id);
+    console.log(dat);
   
     fetch(url)
       .then(function(response) {
@@ -28,3 +28,6 @@ window.addEventListener("load", function() {
       });
   });
   
+
+ 
+ 

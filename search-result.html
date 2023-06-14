@@ -10,53 +10,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Noto+Sans+Zanabazar+Square&family=Urbanist:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
     
+
+
     <title></title>
 </head>
 <body>
 
-    <header>
-        <nav>
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="playlist.html">Playlist Favoritas</a></li>
-            <li><a href="genres.html">Géneros</a></li>
-
-          </ul>
-        </nav>
-
+  <header>
+    <nav>
+      <ul class="listado-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="playlist.html">Playlist Favoritas</a></li>
+        <li><a href="genres.html">Géneros</a></li>
+        </ul>
+    </nav>
 
 
-          <section class="search-container">
-            <input type="search" name="search" id="search-input" placeholder="Buscar en sound...">
-              <button class="search-button" type="submit"><i class="material-icons">search</i></button>
-              <p class="alerta"></p>
-  
-  
-          </section>
+
+    <section class="search-container">
+      <form action="search-result.html" method="GET">
+      <input type="search" name="search" id="search-input" placeholder="Buscar en sound...">
+        <button class="search-button" type="submit"><i class="material-icons">search</i></button>
+        <p class="alerta"></p>
+      </form>
+
+    </section>
 
 
-      </header>
-
+  </header>
 
   <section class="logo">
-    <img src="./img/logo.webp"
+    <img src="./img/logo.webp">
 </section>
 
 
-
-
     <section>
-        <h1 class="result-titulo"></h1>
+        <h1 class="resultados-busquedas"></h1>
     </section>
 
-    <!--leyenda-->
-    <h2 class="leyenda">Lo sentimos, no se han encontrado resultados para tu búsqueda.</h2>
+    <article class="contenedor-resultados"></article>
 
-    <!--información-->
-    <article class="contenedor_artistas_home"></article>
-
-    <!--go to top-->
     <article class="arriba-conteiner">
         <p class="arriba"><a href="#"> <i class="fas fa-arrow-up"></i></a></p>
     </article>

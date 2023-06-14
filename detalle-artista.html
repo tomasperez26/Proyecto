@@ -9,48 +9,59 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Noto+Sans+Zanabazar+Square&family=Urbanist:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
     
+
+
     <title></title>
 </head>
 <body>
-    <header>
-        <nav>
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="playlist.html">Playlist Favoritas</a></li>
-            <li><a href="genres.html">Géneros</a></li>
-          </ul>
-        </nav>
+  <header>
+    <nav>
+      <ul class="listado-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="playlist.html">Playlist Favoritas</a></li>
+        <li><a href="genres.html">Géneros</a></li>
+        </ul>
+    </nav>
 
 
-          <section class="search-container">
-            <input type="search" name="search" id="search-input" placeholder="Buscar en sound...">
-              <button class="search-button" type="submit"><i class="material-icons">search</i></button>
-              <p class="alerta"></p>
-  
-  
-          </section>
-    
-      </header>
 
+    <section class="search-container">
+      <form action="search-result.html" method="GET">
+      <input type="search" name="search" id="search-input" placeholder="Buscar en sound...">
+        <button class="search-button" type="submit"><i class="material-icons">search</i></button>
+        <p class="alerta"></p>
+      </form>
+
+    </section>
+
+
+  </header>
       <section class="logo">
-        <img src="./img/logo.webp"
+        <img src="./img/logo.webp">
     </section>
     
       <section class="artista">
 
-        <div class="imgartista"></div>
-        <h4 class="nombre-artista"
-          
-        <article class="canciones-discos">
-            <h4 class="top-albums">Top álbums:
-                <ol class="nombres-albums">
+        <article class="imgartista">
+          <h4 class="nombre-artista"></h4>
 
-                </ol>
-            </h4>
         </article>
 
-    </section>
+        <article class="canciones-discos">
+          <h4 class="top-albums">Top álbums de este artista..
+              <ol class="nombres-albums">
+
+              </ol>
+          </h4>
+        </article>
+          
+      </section>
+
+
+
 
     
     <footer>
@@ -74,6 +85,7 @@
           </section>
         </article>
       </footer>
+      <script src="./js/detail-artists.js"></script>
 
 </body>
 </html>

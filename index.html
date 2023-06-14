@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Noto+Sans+Zanabazar+Square&family=Urbanist:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
     
 
 
@@ -17,20 +20,21 @@
     <body>
       <header>
         <nav>
-          <ul>
+          <ul class=listado-menu>
             <li><a href="index.html">Home</a></li>
             <li><a href="playlist.html">Playlist Favoritas</a></li>
             <li><a href="genres.html">Géneros</a></li>
-          </ul>
+            </ul>
         </nav>
 
 
 
         <section class="search-container">
+          <form action="search-result.html" method="GET">
           <input type="search" name="search" id="search-input" placeholder="Buscar en sound...">
             <button class="search-button" type="submit"><i class="material-icons">search</i></button>
             <p class="alerta"></p>
-
+          </form>
 
         </section>
 
@@ -38,23 +42,23 @@
       </header>
 
       <section class="logo">
-        <img src="./img/logo.webp"
+        <img src="./img/logo.webp">
     </section>
 
     <section class="listadoprincipal">
-      <h1 class="titulo-cansiones">Canciones </h1>
+      <h1 class="titulo-cansiones"> Top canciones </h1>
 
         <article class="cansiones">
 
         </article>
 
-        <h1 class="titulo-albums"> Albumes</h1>
+        <h1 class="titulo-albums">Top albums</h1>
 
          <article class="albumes">
 
          </article>
 
-         <h1 class="titulo-artistas">Artistas </h1>
+         <h1 class="titulo-artistas">Top artistas </h1>
 
         <article class="artistas">
         </article>

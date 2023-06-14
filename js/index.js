@@ -1,27 +1,49 @@
 
+
+let formulario = document.querySelector("form");
+    let campoBuscar = document.querySelector("[name = search]");
+    let alert = document.querySelector(".alerta");
+
+    formulario.addEventListener("submit" , function(e){
+        e.preventDefault();
+
+    if(campoBuscar.value == ""){
+        alert.innerText = "El campo no puede estar vacío";
+    }else if( campoBuscar.value.length < 3){
+        alert.innerText = "Por favor ingrese más de 3 carácteres";
+    }else{
+        this.submit(); 
+    }
+    campoBuscar.addEventListener("input" , function(){
+        alert.innerText = "";
+    })
+
+    })
+
+
 let urlSongs = `https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/tracks`;
   
-  fetch( urlSongs ) //Permite consultar la url de forma asincrónica, es una promesa
-  .then( function(response){ //procesa
-      return response.json(); //es otra promesa, necesita otro then para contenerla
+  fetch( urlSongs ) 
+  .then( function(response){ 
+      return response.json()
   })
-  .then( function(data){ //Aca muestro código
+  .then( function(data){ 
 
-      let arraySongs = data.data;
-      let topSongs= document.querySelector(".cansiones");
-      let conten =""; //contenido dentro de la lista, a llenar
+      let arraycanciones = data.data;
+      let topcanciones= document.querySelector(".cansiones")
+      let conten =""
       console.log(data)
 
-      for(let i=0; i<5; i++){//bucle  que recorre array de albumes
+      for(let i=0; i<5; i++){
       conten += `
           <article class="track_home">
-              <a href="detail_track.html?id=${arraySongs[i].id}"><img width="225px" src="${arraySongs[i].album.cover_big}" alt="Canción"></a>
-              <h5><a class="nombreDelArtista" href="detail_artist.html?id=${arraySongs[i].artist.id}">${arraySongs[i].artist.name}</a></h5>
-              <h3><a href="detail_track.html?id=${arraySongs[i].id}">${arraySongs[i].title}</a></h3>
+              <a href="detail_track.html?id=${arraycanciones[i].id}"><img width="225px"  class="img-index" src="${arraycanciones[i].album.cover_big}" alt="Canción"></a>
+              <h5><a class="nombreDelArtista" href="detail_artist.html?id=${arraycanciones[i].artist.id}">${arraycanciones[i].artist.name}</a></h5>
+              <h3><a  class= "nombre-cancion" href="detalle-cancion.html?id=${arraycanciones[i].id}">${arraycanciones[i].title}</a></h3>
           </article>`
       
       } 
-         topSongs.innerHTML += conten;         
+         topcanciones.innerHTML += conten;         
   })
   .catch( function(error){
       console.log(error);
@@ -37,19 +59,20 @@ fetch( URLalbums)
 })
 .then( function(data){ 
 console.log(data)
-let arrayAlbums = data.data;
-let topAlbums= document.querySelector(".albumes");
-let element =""; 
+let arrayalbums = data.data;
+let topalbums= document.querySelector(".albumes");
+let element =""
 console.log(data)
 
 for(let i=0; i<5; i++){
   element+= `<article class="album_track_home">
-      <a href="detail_album.html?id=${arrayAlbums[i].id}"><img src="${arrayAlbums[i].cover_big}"></a>
-      <h3><a href="detail_album.html?id=${arrayAlbums[i].id}">${arrayAlbums[i].title}</a></h3>
+      <a href="detail_album.html?id=${arrayalbums[i].id}"><img width="225px"   class="img-index" src="${arrayalbums[i].cover_big}"></a>
+
+      <h3><a href="detalle-album.html?id=${arrayalbums[i].id}">${arrayalbums[i].title}</a></h3>
   </article>`
 
 } 
- topAlbums.innerHTML += element;         
+ topalbums.innerHTML += element;         
 })
 .catch( function(error){
   console.log(error);
@@ -58,28 +81,28 @@ for(let i=0; i<5; i++){
 //top artitas
 
 
-let urlArtistas = `https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/artists`
+let urlartistas = `https://api.allorigins.win/raw?url=https://api.deezer.com/chart/0/artists`
   
-fetch( urlArtistas ) 
+fetch( urlartistas ) 
   .then( function(response){ 
-      return response.json();
+      return response.json()
   })
   .then( function(data){ 
 
-      let arrayArtistas = data.data;
-      let topArtists = document.querySelector(".artistas");
-      let elemen =""; 
+      let arrayartistas = data.data;
+      let topartists = document.querySelector(".artistas")
+      let elemen =""
       console.log(data)
 
       for(let i=0; i<5; i++){
           elemen += `
           <article class="artistas_home">    
-              <a href="detail_artist.html?id=${arrayArtistas[i].id}"><img src="${arrayArtistas[i].picture_big}" alt="artista imagen"></a>
-              <h4><a href="detail_artist.html?id=${arrayArtistas[i].id}">${arrayArtistas[i].name}</a></h4>
+              <a href="detail_artist.html?id=${arrayartistas[i].id}"><img width="225px"    class="img-index" src="${arrayartistas[i].picture_big}" alt="artista imagen"></a>
+              <h4><a href="detalle-artista.html?id=${arrayartistas[i].id}">${arrayartistas[i].name}</a></h4>
           </article>`
       
       } 
-        topArtists.innerHTML += elemen;          
+        topartists.innerHTML += elemen         
   })
   .catch( function(error){
       console.log(error);

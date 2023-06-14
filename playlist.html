@@ -10,31 +10,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Noto+Sans+Zanabazar+Square&family=Urbanist:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
+    
+<header>
+  <nav>
+    <ul class="listado-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="playlist.html">Playlist Favoritas</a></li>
+      <li><a href="genres.html">Géneros</a></li>
+      </ul>
+  </nav>
+
+
+
+  <section class="search-container">
+    <form action="search-result.html" method="GET">
+    <input type="search" name="search" id="search-input" placeholder="Buscar en sound...">
+      <button class="search-button" type="submit"><i class="material-icons">search</i></button>
+      <p class="alerta"></p>
+    </form>
+
+  </section>
+
+
+</header>
+
 </head>
 <body>
-    <header>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="playlist.html">Playlist Favoritas</a></li>
-            <li><a href="genres.html">Géneros</a></li>
-          </ul>
-        </nav>
-
-
-          <section class="search-container">
-            <input type="search" name="search" id="search-input" placeholder="Buscar en sound...">
-              <button class="search-button" type="submit"><i class="material-icons">search</i></button>
-              <p class="alerta"></p>
-  
-  
-          </section>
-        </header>
+    
         <section class="logo">
-          <img src="./img/logo.webp"
-      </section>
-      <section class = "tituloMiPlaylist">
-        <h1>Mi Playlist</h1>
+          <img src="./img/logo.webp">
+      
+      
+        </section>
+<section class="titulo-playlist">
+
+  <h1>Mi Playlist</h1>
+</section>
+
+      <section class = "miPlaylist">
+        
 
       </section>
       <footer>
@@ -59,6 +76,8 @@
         </article>
       </footer>
 </body>
+
+<script src="./js/playlist.js"></script>
 
 </html>
 

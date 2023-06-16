@@ -85,3 +85,44 @@ let favoritos = [];
         localStorage.setItem('favoritos', favparastorage)
         console.log(localStorage);  
     })
+/* dark mode */
+
+let body = document.body;
+let headings = document.getElementsByTagName('h1');
+let darkModeButton = document.getElementById('darkModeButton');
+
+let isDarkMode = localStorage.getItem('isDarkMode') === 'true';
+
+updateMode();
+
+darkModeButton.onclick = function() {
+  isDarkMode = !isDarkMode;
+  updateMode();
+  localStorage.setItem('isDarkMode', isDarkMode);
+};
+
+function updateMode() {
+  if (isDarkMode) {
+    applyDarkMode();
+    darkModeButton.textContent = 'Modo Claro';
+  } else {
+    removeDarkMode();
+    darkModeButton.textContent = 'Modo Oscuro';
+  }
+}
+
+function applyDarkMode() {
+  body.style.backgroundImage = 'url(./img/fondo-negro.jpeg)';
+  body.style.color = 'white';
+  for (let i = 0; i < headings.length; i++) {
+    headings[i].style.color = 'white';
+  }
+}
+
+function removeDarkMode() {
+  body.style.backgroundImage = 'url(./img/wallpaperflare.com_wallpaper.jpg)';
+  body.style.color = '#000';
+  for (let i = 0; i < headings.length; i++) {
+    headings[i].style.color = 'white';
+  }
+}

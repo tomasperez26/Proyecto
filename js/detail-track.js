@@ -51,42 +51,37 @@ console.log(data);
     console.log(error);
 })
 
+let favoritos = [];
 
-let favoritos = []
-let recuperoStorage = localStorage.getItem('favoritos')
+    
+    let recuperoStorage = localStorage.getItem('favoritos')
+    
+    if(recuperoStorage != null){
+        favoritos = JSON.parse(recuperoStorage)
+    }       
+    
+    if(favoritos.includes(id)){
+        document.querySelector('.boton').innerHTML = `<i class="fas fa-heart"></i> Quitar de mí playlist`
+    }
+    
+    let favo= document.querySelector('.boton')
+        console.log(favo);
+    
+    favo.addEventListener("click", function(e){
+        e.preventDefault();
+    
+        if(favoritos.includes(id)){
+            let idASacar = favoritos.indexOf(id)
+            favoritos.splice(idASacar, 1)
+            document.querySelector('.boton').innerHTML = `<i class="far fa-heart"></i> Añadir a mi playlist`
+        } else {
+            favoritos.push(id);
+            console.log(favoritos);
+            document.querySelector('.boton').innerHTML = `<i class="fas fa-heart"></i> Quitar de mí playlist`
+        }
 
-if (recuperoStorage != null) {
-  favoritos = JSON.parse(recuperoStorage)
-}
-
-// Verificar si el elemento actual ya está en la lista de favoritos
-let estaEnFavoritos = false
-let nuevosFavoritos = []
-for (let i = 0; i < favoritos.length; i++) {
-  if (favoritos[i] === id) {
-    estaEnFavoritos = true
-  } else {
-    nuevosFavoritos.push(favoritos[i])
-  }
-}
-
-if (estaEnFavoritos) {
-  document.querySelector('.boton').innerHTML = `<i class="fas fa-heart"></i> Quitar de mi playlist`;
-}
-
-// Agregar event listener al botón
-let boton = document.querySelector('.boton');
-boton.addEventListener("click", function(e) {
-  e.preventDefault();
-
-  if (estaEnFavoritos) {
-    document.querySelector('.boton').innerHTML = `<i class="far fa-heart"></i> Añadir a mi playlist`;
-  } else {
-    nuevosFavoritos.push(id);
-    document.querySelector('.boton').innerHTML = `<i class="fas fa-heart"></i> Quitar de mi playlist`;
-  }
-
-  // Guardar la lista de favoritos actualizada en el localStorage
-  let favParaStorage = JSON.stringify(nuevosFavoritos)
-  localStorage.setItem('favoritos', favParaStorage)
-});
+        let favparastorage = JSON.stringify(favoritos)
+        
+        localStorage.setItem('favoritos', favparastorage)
+        console.log(localStorage);  
+    })

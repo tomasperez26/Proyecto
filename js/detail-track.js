@@ -14,7 +14,7 @@ let formulario = document.querySelector("form");
         this.submit(); 
     }
     campoBuscar.addEventListener("input" , function(){
-        alert.innerText = "";
+        alert.innerText = ""
     })
 
     })
@@ -22,19 +22,19 @@ let formulario = document.querySelector("form");
 
 
 let queryString = location.search 
-let queryStringToObject = new URLSearchParams(queryString); 
+let queryStringToObject = new URLSearchParams(queryString)
 let id = queryStringToObject.get('id');
 
-let url = `https://api.allorigins.win/raw?url=https://api.deezer.com/track/${id}`;
+let url = `https://api.allorigins.win/raw?url=https://api.deezer.com/track/${id}`
 
 fetch( url ) 
 .then( function(response){ 
-        return response.json(); 
+        return response.json()
 })
 .then( function(data){ 
 console.log(data);
-    let titulo = document.querySelector('.titulo-detail-can'); 
-    titulo.innerText += `${data.title}`;     
+    let titulo = document.querySelector('.titulo-detail-can')
+    titulo.innerText += `${data.title}`  
 
     let img= document.querySelector(".img-detail-can");
     img.innerHTML += `<img width="400px"  class="imagen-cancion"   src="${data.album.cover_big}" alt="Album Cover">`
@@ -52,21 +52,21 @@ console.log(data);
 })
 
 
-let favoritos = [];
-let recuperoStorage = localStorage.getItem('favoritos');
+let favoritos = []
+let recuperoStorage = localStorage.getItem('favoritos')
 
 if (recuperoStorage != null) {
-  favoritos = JSON.parse(recuperoStorage);
+  favoritos = JSON.parse(recuperoStorage)
 }
 
 // Verificar si el elemento actual ya está en la lista de favoritos
-let estaEnFavoritos = false;
-let nuevosFavoritos = [];
+let estaEnFavoritos = false
+let nuevosFavoritos = []
 for (let i = 0; i < favoritos.length; i++) {
   if (favoritos[i] === id) {
-    estaEnFavoritos = true;
+    estaEnFavoritos = true
   } else {
-    nuevosFavoritos.push(favoritos[i]);
+    nuevosFavoritos.push(favoritos[i])
   }
 }
 
@@ -87,6 +87,6 @@ boton.addEventListener("click", function(e) {
   }
 
   // Guardar la lista de favoritos actualizada en el localStorage
-  let favParaStorage = JSON.stringify(nuevosFavoritos);
-  localStorage.setItem('favoritos', favParaStorage);
+  let favParaStorage = JSON.stringify(nuevosFavoritos)
+  localStorage.setItem('favoritos', favParaStorage)
 });

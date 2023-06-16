@@ -1,6 +1,6 @@
 
 let formulario = document.querySelector("form");
-    let campoBuscar = document.querySelector("[name = search]");
+    let campoBuscar = document.querySelector("[name = search]")
     let alert = document.querySelector(".alerta");
 
     formulario.addEventListener("submit" , function(e){
@@ -9,7 +9,7 @@ let formulario = document.querySelector("form");
     if(campoBuscar.value == ""){
         alert.innerText = "El campo no puede estar vacío";
     }else if( campoBuscar.value.length < 3){
-        alert.innerText = "Por favor ingrese más de 3 carácteres";
+        alert.innerText = "Por favor ingrese más de 3 carácteres"
     }else{
         this.submit(); 
     }
@@ -20,7 +20,7 @@ let formulario = document.querySelector("form");
     })
 
 
-let urlGeneros = "https://api.allorigins.win/raw?url=https://api.deezer.com/genre";
+let urlGeneros = "https://api.allorigins.win/raw?url=https://api.deezer.com/genre"
         
  
 

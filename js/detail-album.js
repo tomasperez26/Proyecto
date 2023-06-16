@@ -33,7 +33,7 @@ fetch (url)
         return response.json();
 })
 .then (function(data){
-    console.log(data);
+    console.log(data)
 
     let nombreAlbum = document.querySelector(".nombre-disco2");
     nombreAlbum.innerText += `${data.title}`;
@@ -44,34 +44,35 @@ fetch (url)
     contenidoNombreArtista.innerHTML += `<a  class="nombre-artista2" href="detalle-artista.html?id=${data.artist.id}">${data.artist.name}</a>`    
         
     let genero = document.querySelector(".genero");
-    genero.innerHTML += `<a href="detalle-genres.html?id=${data.genre_id}">${data.genres.data[0].name}</a>` 
+    genero.innerHTML += `<a href="detalle-genres.html?id=${data.genre_id}&genre=${data.genres.data[0].name}">${data.genres.data[0].name} </a>`
+ 
 
     let fecha = document.querySelector(".fechaPublicasion");
     fecha.innerHTML +=`${data.release_date}`
 
 })
 .catch( function(error){
-    console.log(error);
+    console.log(error)
 })
 
 let urlTrack = `https://api.allorigins.win/raw?url=https://api.deezer.com/album/${id}/tracks`;
 
 fetch (urlTrack)
 .then(function (response){
-    return response.json();
+    return response.json()
 })
 .then (function(data){
-        console.log(data);
+        console.log(data)
         
     let arrayInfo = data.data;
     let tracklist = document.querySelector(".cansionesdisco");
-    let contenidoLista =""; 
+    let contenidoLista =""
     console.log(data)
 
     for(let i=0; i<arrayInfo.length; i++){
         contenidoLista += `
                 <li class="top"> 
-                    <a href="detalle-cancion.html?id=${arrayInfo[i].id}"><i class="far fa-play-circle"></i>${arrayInfo[i].title}</a> 
+                    <a href="detalle-cancion.html?id=${arrayInfo[i].id}"><i></i>${arrayInfo[i].title}</a> 
                 </li>` 
     
     
@@ -80,5 +81,5 @@ fetch (urlTrack)
 
 })
 .catch( function(error){
-    console.log(error);
+    console.log(error)
 })

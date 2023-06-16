@@ -1,21 +1,21 @@
 
 
 let formulario = document.querySelector("form");
-    let campoBuscar = document.querySelector("[name = search]");
-    let alert = document.querySelector(".alerta");
+    let campoBuscar = document.querySelector("[name = search]")
+    let alert = document.querySelector(".alerta")
 
     formulario.addEventListener("submit" , function(e){
         e.preventDefault();
 
     if(campoBuscar.value == ""){
-        alert.innerText = "El campo no puede estar vacío";
+        alert.innerText = "El campo no puede estar vacío"
     }else if( campoBuscar.value.length < 3){
-        alert.innerText = "Por favor ingrese más de 3 carácteres";
+        alert.innerText = "Por favor ingrese más de 3 carácteres"
     }else{
-        this.submit(); 
+        this.submit()
     }
     campoBuscar.addEventListener("input" , function(){
-        alert.innerText = "";
+        alert.innerText = ""
     })
 
     })
@@ -46,7 +46,7 @@ let urlSongs = `https://api.allorigins.win/raw?url=https://api.deezer.com/chart/
          topcanciones.innerHTML += conten;         
   })
   .catch( function(error){
-      console.log(error);
+      console.log(error)
   })
 
 
@@ -60,7 +60,7 @@ fetch( URLalbums)
 .then( function(data){ 
 console.log(data)
 let arrayalbums = data.data;
-let topalbums= document.querySelector(".albumes");
+let topalbums= document.querySelector(".albumes")
 let element =""
 console.log(data)
 
@@ -75,7 +75,7 @@ for(let i=0; i<5; i++){
  topalbums.innerHTML += element;         
 })
 .catch( function(error){
-  console.log(error);
+  console.log(error)
 })
 
 //top artitas

@@ -6,15 +6,15 @@ let recuperoStorage = localStorage.getItem("favoritos");
 let favoritos = JSON.parse(recuperoStorage)
 
 for (i=0; i<favoritos.length; i++){
-    contlocalstorage (favoritos[i]); 
+    contlocalstorage (favoritos[i]);
 }
 
 function contlocalstorage (id){
-    let url = `https://api.allorigins.win/raw?url=https://api.deezer.com/track/${id}`;
+    let url = `https://api.allorigins.win/raw?url=https://api.deezer.com/track/${id}`
     fetch(url)
 
 	.then(function(response) {
-        return response.json();
+        return response.json()
     })
 
     .then(function(data){
@@ -37,7 +37,7 @@ function contlocalstorage (id){
         </article> `
     })
     .catch( function(error){
-        console.log(error);
+        console.log(error)
     })
 
 }
@@ -46,7 +46,7 @@ let formulario = document.querySelector("form");
     let alert = document.querySelector(".alerta");
 
     formulario.addEventListener("submit" , function(e){
-        e.preventDefault();
+        e.preventDefault()
 
     if(campoBuscar.value == ""){
         alert.innerText = "El campo no puede estar vacío";
@@ -56,7 +56,7 @@ let formulario = document.querySelector("form");
         this.submit(); 
     }
     campoBuscar.addEventListener("input" , function(){
-        alert.innerText = "";
+        alert.innerText = ""
     })
 
     })
